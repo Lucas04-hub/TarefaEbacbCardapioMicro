@@ -5,15 +5,12 @@ const nextConfig = {
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'cardapio',
-        filename: 'static/chunks/remoteEntry.js',
+        name: "cardapio",
+        filename: "static/chunks/remoteEntry.js",
         exposes: {
-          './CardapioList': './src/components/CardapioList', // caminho para o componente que será exposto
+          "./CardapioList": "./src/components/CardapioList",
         },
-        shared: {
-          react: { singleton: true, requiredVersion: false },
-          'react-dom': { singleton: true, requiredVersion: false },
-        },
+        shared: {},
       })
     );
     return config;

@@ -5,15 +5,12 @@ const nextConfig = {
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'pedido',
-        filename: 'static/chunks/remoteEntry.js',
+        name: "pedido",
+        filename: "static/chunks/remoteEntry.js",
         exposes: {
-          './PedidoList': './src/components/PedidoList', // caminho para o componente que será exposto
+          "./PedidoList": "./src/components/PedidoList",
         },
-        shared: {
-          react: { singleton: true, requiredVersion: false },
-          'react-dom': { singleton: true, requiredVersion: false },
-        },
+        shared: {},
       })
     );
     return config;
